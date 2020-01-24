@@ -75,8 +75,14 @@ Person.prototype.toString = function() {
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {
-x
+function Car(model, milesPerGallon) {
+  this.model=model;
+  this.milesPerGallon=milesPerGallon;
+  this.tank=0;
+}
+
+Car.prototype.fill=function(gallons){
+  this.tank+=gallons
 }
 
 /*
@@ -86,18 +92,27 @@ x
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
+function Baby(name, age,favorityToy) {
+  person.call()
+  this.name=namel
+  this.age=age;
+  this.favoriteToy=favoriteToy;
+}
 
+Baby.prototype = object.create(Person.prototype)
+
+Baby.prototype.play=function(){
+  return 'Return with $(this.favoriteToy)'
 }
 
 /* 
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1.  ‘this’ refers to the global object.
+  2. ‘this’ remains the global object if you’re calling a function.
+  3.  calling an object constructor or any of its methods, ‘this’ refers to the instance of the object 
+  4. using call and apply
 */
 
 
@@ -111,3 +126,5 @@ if (typeof exports !== 'undefined') {
   if (Car) { module.exports.Car = Car }
   if (Baby) { module.exports.Baby = Baby }
 }
+
+
